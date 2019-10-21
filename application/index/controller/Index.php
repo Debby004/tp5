@@ -2,13 +2,25 @@
 namespace app\index\controller;
 use think\Controller;
 use think\view;
-class Index
+use \think\Db;
+class Index extends Controller
 {
     public function index(){
+ 
+
+        $result = Db::name('user')->alias('a')
+                 ->join('faculty b','a.faculty_id= b.id')  
+                 ->field('a.name as  username ,b.name as faculty_name')
+                 ->select();
+        $this->assign('data',$result);  
         return view('index');
     }
-    public function index2()
-    {
+
+
+
+
+
+    public function index2(){
         $k = 3;
         $a = [1, 99, 88, 5, 4];
         /*  冒泡排序

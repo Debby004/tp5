@@ -2,10 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>12</title>
+    <title>首页</title>
 </head>
 <body>
-<form action="">
+    <table>
+            <tr>  
+                <td>姓名</td>
+                <td>所在学院</td>
+            </tr>
+        {volist name="data" id="vo"}
+            <tr>
+                <td>{$vo.username}</td>
+                <td>{$vo.faculty_name}</td>
+            </tr>
+        {/volist} 
+    </table>
+
+
+<!-- <form action="">
     <input type="text"  >
     <br>
     <input type="password" >
@@ -20,6 +34,6 @@
 
     </select>
     <input type="submit">
-</form>
+</form> -->
 </body>
 </html>
